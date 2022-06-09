@@ -7,6 +7,7 @@
     <ul class="list-group">
         <li class="list-group-item">Category: {{ todos.category }}</li>
         <li class="list-group-item">Priority: {{ todos.priority }}</li>
+        <li class="list-group-item">Description: {{ todos.tag.description }}</li>
         <li class="list-group-item">Due: <strong>{{ todos.dueDate|date('F j,Y, g:i a') }}</strong></li>
     </ul>
     <p>{{ todos.description }}</p>

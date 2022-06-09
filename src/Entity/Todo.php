@@ -42,6 +42,12 @@ class Todo
      */
     private $due_date;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Tag::class, inversedBy="todos")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $tag;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +109,18 @@ class Todo
     public function setDueDate(\DateTimeInterface $due_date): self
     {
         $this->due_date = $due_date;
+
+        return $this;
+    }
+
+    public function getTag(): ?tag
+    {
+        return $this->tag;
+    }
+
+    public function setTag(?tag $tag): self
+    {
+        $this->tag = $tag;
 
         return $this;
     }
